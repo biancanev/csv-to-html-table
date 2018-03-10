@@ -58,8 +58,9 @@
       }
       function find(){
       var ticker = document.getElementById("ticker").value;
+      var csv = "http://financials.morningstar.com/ajax/ReportProcess4CSV.html?t="+ ticker +"TWTR&reportType=is&period=12&dataType=A&order=asc&columnYear=5&number=3";
       CsvToHtmlTable.init({
-        csv_path: ticker,
+        csv_path: csv,
         element: 'table-container', 
         allow_download: true,
         csv_options: {separator: ',', delimiter: '"'},
