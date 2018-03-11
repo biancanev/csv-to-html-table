@@ -118,12 +118,18 @@
       // Draw the chart and set the chart values
       function drawChart() {
         var numRows = document.getElementById("table-container-table").rows.length;
-        var data1 = document.getElementById("table-container-table").rows[35].cells[1].innerHTML;
-        var data2 = document.getElementById("table-container-table").rows[35].cells[2].innerHTML;
-        var data3 = document.getElementById("table-container-table").rows[35].cells[3].innerHTML;
-        var data4 = document.getElementById("table-container-table").rows[35].cells[4].innerHTML;
-        var data5 = document.getElementById("table-container-table").rows[35].cells[5].innerHTML;
-        var data6 = document.getElementById("table-container-table").rows[35].cells[6].innerHTML;
+        var beta1 = document.getElementById("table-container-table").rows[35].cells[1].innerHTML;
+        var beta2 = document.getElementById("table-container-table").rows[35].cells[2].innerHTML;
+        var beta3 = document.getElementById("table-container-table").rows[35].cells[3].innerHTML;
+        var beta4 = document.getElementById("table-container-table").rows[35].cells[4].innerHTML;
+        var beta5 = document.getElementById("table-container-table").rows[35].cells[5].innerHTML;
+        var beta6 = document.getElementById("table-container-table").rows[35].cells[6].innerHTML;
+        var data1 = parseInt(beta1);
+        var data2 = parseInt(beta2);
+        var data3 = parseInt(beta3);
+        var data4 = parseInt(beta4);
+        var data5 = parseInt(beta5);
+        var data6 = parseInt(beta6);
         var data = google.visualization.arrayToDataTable([
         ['Task', 'Hours per Day'],
         ['2013', data1],
