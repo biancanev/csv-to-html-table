@@ -110,8 +110,43 @@
         }
     }
 });
-   
+    google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+     
+      // Draw the chart and set the chart values
+      function drawChart() {
+        var numRows = document.getElementById("table-container-table").rows.length;
+        var beta1 = document.getElementById("table-container-table").rows[numRows-1].cells[1].innerHTML;
+        var beta2 = document.getElementById("table-container-table").rows[numRows-1].cells[2].innerHTML;
+        var beta3 = document.getElementById("table-container-table").rows[numRows-1].cells[3].innerHTML;
+        var beta4 = document.getElementById("table-container-table").rows[numRows-1].cells[4].innerHTML;
+        var beta5 = document.getElementById("table-container-table").rows[numRows-1].cells[5].innerHTML;
+        var beta6 = document.getElementById("table-container-table").rows[numRows-1].cells[6].innerHTML;
+        var data1 = parseInt(beta1);
+        var data2 = parseInt(beta2);
+        var data3 = parseInt(beta3);
+        var data4 = parseInt(beta4);
+        var data5 = parseInt(beta5);
+        var data6 = parseInt(beta6);
+        var data = google.visualization.arrayToDataTable([
+        ['Year', 'Value'],
+        ['2013', data1],
+        ['2014', data2],
+        ['2015', data3],
+        ['2016', data4],
+        ['2017', data5],
+        ['TTM', data6]
+      ]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Free Cash Flow', 'width':400, 'height':300};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.ColumnChart(document.getElementById('container'));
+  chart.draw(data, options);
+}
       }
+      setTimeout(drawChart, 3000);
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
      
