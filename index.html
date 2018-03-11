@@ -18,6 +18,7 @@
       }
     </style>
     <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/dataTables.bootstrap.css" rel="stylesheet">
 
@@ -34,12 +35,13 @@
       <h2>Find your Stock</h2>
 <hr>
       <input type="text" id="ticker"><br><br>
-      <button onclick="find();drawChart();" class="ticker_button">Search Ticker</button>
+      <button onclick="find();" class="ticker_button">Search Ticker</button>
       <div id='table-container'></div>
 
     </div><!-- /.container -->
     <p id="search-result"></p>
     <h3>Free Cash Flow Chart</h3>
+    <a href="javascript:void(0);" onclick="drawChart();">Show Cash Flow Chart<i class="fa fa-caret-down"></i></a>
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     <footer class='footer'>
       <div class='container-fluid'>
