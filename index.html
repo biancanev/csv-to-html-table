@@ -82,21 +82,27 @@
       google.charts.setOnLoadCallback(drawStuff);
 
       function drawStuff() {
+        var x = document.getElementById("myTable").rows.length - 1;
+        var data1 = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
+        var data2 = document.getElementById("table-container-table").rows[x].cells[2].innerHTML;
+        var data3 = document.getElementById("table-container-table").rows[x].cells[3].innerHTML;
+        var data4 = document.getElementById("table-container-table").rows[x].cells[4].innerHTML;
+        var data5 = document.getElementById("table-container-table").rows[x].cells[5].innerHTML;
         var data = new google.visualization.arrayToDataTable([
-          ['Move', 'Percentage'],
-          ["King's pawn (e4)", 44],
-          ["Queen's pawn (d4)", 31],
-          ["Knight to King 3 (Nf3)", 12],
-          ["Queen's bishop pawn (c4)", 10],
-          ['Other', 3]
+          ['Year', 'Value'],
+          ["2013", data1],
+          ["2014", data2],
+          ["2015", data3],
+          ["2016", data4],
+          ['2017', data5]
         ]);
 
         var options = {
           width: 800,
           legend: { position: 'none' },
           chart: {
-            title: 'Chess opening moves',
-            subtitle: 'popularity by percentage' },
+            title: 'Free Cash Flow',
+            subtitle: '' },
           axes: {
             x: {
               0: { side: 'top', label: 'White to move'} // Top x-axis.
