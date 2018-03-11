@@ -82,7 +82,7 @@
       google.charts.setOnLoadCallback(drawStuff);
 
       function drawStuff() {
-        document.getElementByTag("TABLE").id = "statTable";
+        document.getElementByTagName("TABLE").id = "statTable";
         var x = document.getElementById("statTable").rows.length - 1;
         var data1 = document.getElementById("statTable").rows[35].cells[1].innerHTML;
         var data2 = document.getElementById("statTable").rows[35].cells[2].innerHTML;
