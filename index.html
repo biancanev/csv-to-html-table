@@ -8,7 +8,14 @@
     <title>Search For your Stock</title>
     <meta name="author" content="Derek Eder[edited by Ryan Kwong]">
     <meta content="Display any CSV file as a searchable, filterable, pretty HTML table" />
-
+    <style>
+      .ticker_button{
+        border: none;
+        padding: 12px 20px;
+        color: white;
+        background-color: green;
+      }
+    </style>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/dataTables.bootstrap.css" rel="stylesheet">
@@ -26,7 +33,7 @@
       <h2>Find your Stock</h2>
 <hr>
       <input type="text" id="ticker">
-      <button onclick="find();drawStuff();">Search Ticker</button>
+      <button onclick="find();drawStuff();" class="ticker_button">Search Ticker</button>
       <div id='table-container'></div>
 
     </div><!-- /.container -->
