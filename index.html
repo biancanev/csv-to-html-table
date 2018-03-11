@@ -78,45 +78,29 @@
         datatables_options: {"paging": false},
         custom_formatting: [[4, format_link]]
       });
-     google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawStuff);
-
-      function drawStuff() {
-        document.getElementByTagName("table-container").id = "statTable";
-        var x = document.getElementById("statTable").rows.length - 1;
-        var data1 = document.getElementById("table-container-table").rows[35].cells[1].innerHTML;
-        var data2 = document.getElementById("table-container-table").rows[35].cells[2].innerHTML;
-        var data3 = document.getElementById("table-container-table").rows[35].cells[3].innerHTML;
-        var data4 = document.getElementById("table-container-table").rows[35].cells[4].innerHTML;
-        var data5 = document.getElementById("table-container-table").rows[35].cells[5].innerHTML;
-        var data = new google.visualization.arrayToDataTable([
-          ['Year', 'Value'],
-          ["2013", data1],
-          ["2014", data2],
-          ["2015", data3],
-          ["2016", data4],
-          ['2017', data5]
-        ]);
-
-        var options = {
-          width: 800,
-          legend: { position: 'none' },
-          chart: {
-            title: 'Free Cash Flow',
-            subtitle: '' },
-          axes: {
-            x: {
-              0: { side: 'top', label: 'White to move'} // Top x-axis.
-            }
-          },
-          bar: { groupWidth: "90%" }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-        // Convert the Classic options to Material options.
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      };
-      }
+     Highcharts.chart('container', {
+    data: {
+        table: 'table-container-table'
+    },
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Data extracted from a HTML table in the page'
+    },
+    yAxis: {
+        allowDecimals: false,
+        title: {
+            text: 'Units'
+        }
+    },
+    tooltip: {
+        formatter: function () {
+            return '<b>' + this.series.name + '</b><br/>' +
+                this.point.y + ' ' + this.point.name.toLowerCase();
+        }
+    }
+});
     </script>
   </body>
 </html>
