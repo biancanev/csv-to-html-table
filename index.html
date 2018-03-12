@@ -118,6 +118,7 @@
      
       // Draw the chart and set the chart values
       function drawChart() {
+        //Get data from table
         var numRows = document.getElementById("table-container-table").rows.length;
         var beta1 = document.getElementById("table-container-table").rows[numRows-1].cells[1].innerHTML;
         var beta2 = document.getElementById("table-container-table").rows[numRows-1].cells[2].innerHTML;
@@ -125,12 +126,14 @@
         var beta4 = document.getElementById("table-container-table").rows[numRows-1].cells[4].innerHTML;
         var beta5 = document.getElementById("table-container-table").rows[numRows-1].cells[5].innerHTML;
         var beta6 = document.getElementById("table-container-table").rows[numRows-1].cells[6].innerHTML;
+        //Change data type from 'str' to 'int'
         var data1 = parseInt(beta1);
         var data2 = parseInt(beta2);
         var data3 = parseInt(beta3);
         var data4 = parseInt(beta4);
         var data5 = parseInt(beta5);
         var data6 = parseInt(beta6);
+        //Put chart data together
         var data = google.visualization.arrayToDataTable([
         ['Year', 'Value', { role: 'style' }],
         ['2013', data1, '#6B5B95'],
