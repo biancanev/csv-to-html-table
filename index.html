@@ -219,6 +219,21 @@ li a.active {
   var chart = new google.visualization.ColumnChart(document.getElementById('container'));
   chart.draw(data, options);
 }
+var rows = document.getElementById("table-container-table").rows.length;
+var x = 1;
+while(x < rows){
+  var row_name = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
+  if(row_name == "Debt repayment"){
+    var debt1 = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
+    var debt2 = document.getElementById("table-container-table").rows[x].cells[2].innerHTML;
+    var debt3 = document.getElementById("table-container-table").rows[x].cells[3].innerHTML;
+    var debt4 = document.getElementById("table-container-table").rows[x].cells[4].innerHTML;
+    var debt5 = document.getElementById("table-container-table").rows[x].cells[5].innerHTML;
+    var debt6 = document.getElementById("table-container-table").rows[x].cells[6].innerHTML;
+  }else{
+    x = x + 1
+  }
+}
     </script>
   </body>
 </html>
