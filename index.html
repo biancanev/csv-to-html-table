@@ -74,7 +74,7 @@ li a.active {
       <h2>Find your Stock</h2>
 <hr>
       <input type="text" id="ticker" placeholder="Enter the Ticker Symbol"><br><br>
-      <button onclick="find();find2();find3();" class="ticker_button">Search Ticker</button>
+      <button onclick="find();find2();find3();find4();" class="ticker_button">Search Ticker</button>
       <div id='table-container'></div>
       <div id="table-container-2"></div>
       <div id="table-container-3"></div>
@@ -84,6 +84,10 @@ li a.active {
     <a href="javascript:void(0);" onclick="drawChart();">Show Cash Flow Chart<i class="fa fa-caret-down"></i></a><br>
     <a href="javascript:void(0);" onclick="drawChart();"><i class="fa fa-refresh"></i> Refresh Chart</a>
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <h3>Debt Repayment</h3>
+    <a href="javascript:void(0);" onclick="drawChart1();">Show Debt Repayment Chart<i class="fa fa-caret-down"></i></a><br>
+    <a href="javascript:void(0);" onclick="drawChart1();"><i class="fa fa-refresh"></i>Refresh Chart</a>
+    <div id="container2" style="min-width: 310px; heifht: 400px; margin: 0 auto"></div>
     <footer class='footer'>
       <div class='container-fluid'>
         <hr />
@@ -219,20 +223,52 @@ li a.active {
   var chart = new google.visualization.ColumnChart(document.getElementById('container'));
   chart.draw(data, options);
 }
-var rows = document.getElementById("table-container-table").rows.length;
-var x = 1;
-while(x < rows){
-  var row_name = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
-  if(row_name == "Debt repayment"){
-    var debt1 = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
-    var debt2 = document.getElementById("table-container-table").rows[x].cells[2].innerHTML;
-    var debt3 = document.getElementById("table-container-table").rows[x].cells[3].innerHTML;
-    var debt4 = document.getElementById("table-container-table").rows[x].cells[4].innerHTML;
-    var debt5 = document.getElementById("table-container-table").rows[x].cells[5].innerHTML;
-    var debt6 = document.getElementById("table-container-table").rows[x].cells[6].innerHTML;
-  }else{
-    x = x + 1
+function find4(){
+  var rows = document.getElementById("table-container-table").rows.length;
+  var x = 1;
+  while(x < rows){
+    var row_name = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
+    if(row_name == "Debt repayment"){
+      var debt1 = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
+      var debt2 = document.getElementById("table-container-table").rows[x].cells[2].innerHTML;
+      var debt3 = document.getElementById("table-container-table").rows[x].cells[3].innerHTML;
+      var debt4 = document.getElementById("table-container-table").rows[x].cells[4].innerHTML;
+      var debt5 = document.getElementById("table-container-table").rows[x].cells[5].innerHTML;
+      var debt6 = document.getElementById("table-container-table").rows[x].cells[6].innerHTML;
+    }else{
+      x = x + 1
+    }
   }
+   google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+     
+      // Draw the chart and set the chart values
+      function drawChart1() {
+        //Change data type from 'str' to 'int'
+        var data1 = parseInt(debt1);
+        var data2 = parseInt(debt2);
+        var data3 = parseInt(debt3);
+        var data4 = parseInt(debt4);
+        var data5 = parseInt(debt5);
+        var data6 = parseInt(debt6);
+        //Put chart data together
+        var data = google.visualization.arrayToDataTable([
+        ['Year', 'Value', { role: 'style' }],
+        ['2013', data1, '#6B5B95'],
+        ['2014', data2, '#6B5B95'],
+        ['2015', data3, '#6B5B95'],
+        ['2016', data4, '#6B5B95'],
+        ['2017', data5, '#6B5B95'],
+        ['TTM', data6, '#6B5B95']
+      ]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Debt Repayment', 'width':400, 'height':300};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.ColumnChart(document.getElementById('container2'));
+  chart.draw(data, options);
+}
 }
     </script>
   </body>
