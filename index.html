@@ -164,7 +164,7 @@ li a.active {
         var ticker = document.getElementById("ticker").value;
         var csv = "http://financials.morningstar.com/ajax/ReportProcess4CSV.html?t="+ ticker +"&reportType=is&period=12&dataType=A&order=asc&columnYear=5&number=3";
         var caps = ticker.toUpperCase;
-        document.title = "Showing Search Results For " + ticker;
+        document.title = "Showing Search Results For " + ticker + " -- StockWatch";
         CsvToHtmlTable.init({
           csv_path: csv,
           element: 'table-container-2', 
