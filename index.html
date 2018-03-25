@@ -88,8 +88,8 @@ li a.active {
     <a href="javascript:void(0);" onclick="drawChart();"><i class="fa fa-refresh"></i> Refresh Chart</a>
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     <h3>Debt Repayment</h3>
-    <a href="javascript:void(0);" onclick="find4();">Show Debt Repayment Chart<i class="fa fa-caret-down"></i></a><br>
-    <a href="javascript:void(0);" onclick="find4();"><i class="fa fa-refresh"></i>Refresh Chart</a>
+    <a href="javascript:void(0);" onclick="drawChart2();">Show Debt Repayment Chart<i class="fa fa-caret-down"></i></a><br>
+    <a href="javascript:void(0);" onclick="drawChart2();"><i class="fa fa-refresh"></i>Refresh Chart</a>
     <div id="container2" style="min-width: 310px; heifht: 400px; margin: 0 auto"></div>
     <footer class='footer'>
       <div class='container-fluid'>
@@ -245,10 +245,12 @@ function find4(){
     }
   }
   console.log("Debt Repayment InnerHTML Found!");
+}
    google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart1);
      
       // Draw the chart and set the chart values
+      function drawChart2(){
         //Change data type from 'str' to 'int'
         var data1 = parseInt(debt1);
         var data2 = parseInt(debt2);
