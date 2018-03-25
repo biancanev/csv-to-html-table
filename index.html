@@ -227,7 +227,7 @@ li a.active {
   chart.draw(data, options);
 }
 function find4(){
-  console.log("find4 activated!");
+  console.log("Beginning of Find4");
   var rows = document.getElementById("table-container-table").rows.length;
   var x = 1;
   var debt1, debt2, debt3, debt4, debt5, debt6;
@@ -244,6 +244,7 @@ function find4(){
       x = x + 1
     }
   }
+  console.log("Debt Repayment InnerHTML Found!");
    google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart1);
      
@@ -265,7 +266,7 @@ function find4(){
         ['2017', data5, '#6B5B95'],
         ['TTM', data6, '#6B5B95']
       ]);
-
+consle.log("Data Put on Chart!");
   // Optional; add a title and set the width and height of the chart
   var options = {'title':'Debt Repayment', 'width':400, 'height':300};
 
@@ -273,6 +274,7 @@ function find4(){
   var chart = new google.visualization.ColumnChart(document.getElementById('container2'));
   chart.draw(data, options);
 }
+      console.log("End of Find4");
     </script>
   </body>
 </html>
