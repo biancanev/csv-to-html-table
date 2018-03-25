@@ -226,8 +226,15 @@ li a.active {
   var chart = new google.visualization.ColumnChart(document.getElementById('container'));
   chart.draw(data, options);
 }
-function find4(){
-  console.log("Beginning of Find4");
+  
+  console.log("Debt Repayment InnerHTML Found!");
+
+   google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart2);
+     
+      // Draw the chart and set the chart values
+      function drawChart2(){
+        console.log("Beginning of Find4");
   var rows = document.getElementById("table-container-table").rows.length;
   var x = 1;
   var debt1, debt2, debt3, debt4, debt5, debt6;
@@ -244,13 +251,6 @@ function find4(){
       x = x + 1
     }
   }
-  console.log("Debt Repayment InnerHTML Found!");
-}
-   google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart1);
-     
-      // Draw the chart and set the chart values
-      function drawChart2(){
         //Change data type from 'str' to 'int'
         var data1 = parseInt(debt1);
         var data2 = parseInt(debt2);
