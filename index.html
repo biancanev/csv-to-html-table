@@ -81,7 +81,7 @@ li a.active {
       <h2>Find your Stock</h2>
 <hr>
       <input type="text" id="ticker" placeholder="Enter the Ticker Symbol"><br><br>
-      <button onclick="find();find2();find3();find4()" class="ticker_button">Search Ticker</button>
+      <button onclick="find();find2();find3();find4()" class="ticker_button" id="search">Search Ticker</button>
       <div id='table-container'></div>
       <div id="table-container-2"></div>
       <div id="table-container-3"></div>
@@ -122,7 +122,7 @@ var input = document.getElementById("ticker");
 input.addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
-        document.getElementByClassName("ticker_button").click();
+        document.getElementById("search").click();
     }
 });
       function format_link(link){
