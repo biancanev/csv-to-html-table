@@ -118,6 +118,13 @@ li a.active {
 
 
     <script type="text/javascript">
+var input = document.getElementById("ticker");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementByClassName("ticker_button").click();
+    }
+});
       function format_link(link){
         if (link)
           return link;
