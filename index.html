@@ -205,13 +205,13 @@ input.addEventListener("keyup", function(event) {
       // Draw the chart and set the chart values
       function drawChart() {
         //Get data from table
-        var numRows = document.getElementById("financials-table").rows.length;
-        var beta1 = document.getElementById("financials-table").rows[numRows-1].cells[1].innerHTML;
-        var beta2 = document.getElementById("financials-table").rows[numRows-1].cells[2].innerHTML;
-        var beta3 = document.getElementById("financials-table").rows[numRows-1].cells[3].innerHTML;
-        var beta4 = document.getElementById("financials-table").rows[numRows-1].cells[4].innerHTML;
-        var beta5 = document.getElementById("financials-table").rows[numRows-1].cells[5].innerHTML;
-        var beta6 = document.getElementById("financials-table").rows[numRows-1].cells[6].innerHTML;
+        var numRows = document.getElementById("table-container-table").rows.length;
+        var beta1 = document.getElementById("table-container-table").rows[numRows-1].cells[1].innerHTML;
+        var beta2 = document.getElementById("table-container-table").rows[numRows-1].cells[2].innerHTML;
+        var beta3 = document.getElementById("table-container-table").rows[numRows-1].cells[3].innerHTML;
+        var beta4 = document.getElementById("table-container-table").rows[numRows-1].cells[4].innerHTML;
+        var beta5 = document.getElementById("table-container-table").rows[numRows-1].cells[5].innerHTML;
+        var beta6 = document.getElementById("table-container-table").rows[numRows-1].cells[6].innerHTML;
         //Change data type from 'str' to 'int'
         var data1 = parseInt(beta1);
         var data2 = parseInt(beta2);
