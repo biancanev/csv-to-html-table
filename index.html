@@ -246,18 +246,18 @@ input.addEventListener("keyup", function(event) {
       // Draw the chart and set the chart values
       function drawChart2(){
         console.log("Beginning of Find4");
-  var rows = document.getElementById("financials-table").rows.length;
+  var rows = document.getElementById("table-container-tablee").rows.length;
   var x = 1;
   var debt1, debt2, debt3, debt4, debt5, debt6;
   while(x < rows){
-    var row_name = document.getElementById("financials-table").rows[x].cells[1].innerHTML;
+    var row_name = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
     if(row_name == "Debt repayment"){
-      debt1 = document.getElementById("financials-table").rows[x].cells[1].innerHTML;
-      debt2 = document.getElementById("financials-table").rows[x].cells[2].innerHTML;
-      debt3 = document.getElementById("financials-table").rows[x].cells[3].innerHTML;
-      debt4 = document.getElementById("financials-table").rows[x].cells[4].innerHTML;
-      debt5 = document.getElementById("financials-table").rows[x].cells[5].innerHTML;
-      debt6 = document.getElementById("financials-table").rows[x].cells[6].innerHTML;
+      debt1 = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
+      debt2 = document.getElementById("table-container-table").rows[x].cells[2].innerHTML;
+      debt3 = document.getElementById("table-container-table").rows[x].cells[3].innerHTML;
+      debt4 = document.getElementById("table-container-table").rows[x].cells[4].innerHTML;
+      debt5 = document.getElementById("table-container-table").rows[x].cells[5].innerHTML;
+      debt6 = document.getElementById("table-container-table").rows[x].cells[6].innerHTML;
     }else{
       x = x + 1
     }
