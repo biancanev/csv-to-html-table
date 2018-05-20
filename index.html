@@ -248,27 +248,27 @@ input.addEventListener("keyup", function(event) {
         console.log("Beginning of Find4");
   var rows = document.getElementById("table-container-tablee").rows.length;
   var x = 1;
-  var debt1, debt2, debt3, debt4, debt5, debt6;
+  var data1, data2, data3, data4, data5, data6;
   while(x < rows){
     var row_name = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
     if(row_name == "Debt repayment"){
-      debt1 = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
-      debt2 = document.getElementById("table-container-table").rows[x].cells[2].innerHTML;
-      debt3 = document.getElementById("table-container-table").rows[x].cells[3].innerHTML;
-      debt4 = document.getElementById("table-container-table").rows[x].cells[4].innerHTML;
-      debt5 = document.getElementById("table-container-table").rows[x].cells[5].innerHTML;
-      debt6 = document.getElementById("table-container-table").rows[x].cells[6].innerHTML;
+      data1 = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
+      data2 = document.getElementById("table-container-table").rows[x].cells[2].innerHTML;
+      data3 = document.getElementById("table-container-table").rows[x].cells[3].innerHTML;
+      data4 = document.getElementById("table-container-table").rows[x].cells[4].innerHTML;
+      data5 = document.getElementById("table-container-table").rows[x].cells[5].innerHTML;
+      data6 = document.getElementById("table-container-table").rows[x].cells[6].innerHTML;
     }else{
       x = x + 1
     }
   }
         //Change data type from 'str' to 'int'
-        var data1 = parseInt(debt1);
-        var data2 = parseInt(debt2);
-        var data3 = parseInt(debt3);
-        var data4 = parseInt(debt4);
-        var data5 = parseInt(debt5);
-        var data6 = parseInt(debt6);
+        var debt1 = parseInt(debt1);
+        var debt2 = parseInt(debt2);
+        var debt3 = parseInt(debt3);
+        var debt4 = parseInt(debt4);
+        var debt5 = parseInt(debt5);
+        var debt6 = parseInt(debt6);
         //Put chart data together
         var data = google.visualization.arrayToDataTable([
         ['Year', 'Value', { role: 'style' }],
