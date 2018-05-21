@@ -118,6 +118,7 @@ li a.active {
 
 
     <script type="text/javascript">
+      console.warn("This site cannot currently load all data properly.")
 var input = document.getElementById("ticker");
 input.addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -248,16 +249,15 @@ input.addEventListener("keyup", function(event) {
         console.log("Beginning of Find4");
   var rows = document.getElementById("table-container-tablee").rows.length;
   var x = 1;
-  var data1, data2, data3, data4, data5, data6;
-  while(x < rows){
+  while(x < rows || document.getElementyId("table-container-table")){
     var row_name = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
     if(row_name == "Debt repayment"){
-      data1 = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
-      data2 = document.getElementById("table-container-table").rows[x].cells[2].innerHTML;
-      data3 = document.getElementById("table-container-table").rows[x].cells[3].innerHTML;
-      data4 = document.getElementById("table-container-table").rows[x].cells[4].innerHTML;
-      data5 = document.getElementById("table-container-table").rows[x].cells[5].innerHTML;
-      data6 = document.getElementById("table-container-table").rows[x].cells[6].innerHTML;
+      var data1 = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
+      var data2 = document.getElementById("table-container-table").rows[x].cells[2].innerHTML;
+      var data3 = document.getElementById("table-container-table").rows[x].cells[3].innerHTML;
+      var data4 = document.getElementById("table-container-table").rows[x].cells[4].innerHTML;
+      var data5 = document.getElementById("table-container-table").rows[x].cells[5].innerHTML;
+      var data6 = document.getElementById("table-container-table").rows[x].cells[6].innerHTML;
     }else{
       x = x + 1
     }
