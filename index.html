@@ -91,6 +91,7 @@ li a.active {
     <a href="javascript:void(0);" onclick="drawChart();">Show Cash Flow Chart<i class="fa fa-caret-down"></i></a><br>
     <a href="javascript:void(0);" onclick="drawChart();"><i class="fa fa-refresh"></i> Refresh Chart</a>
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <h4 id="cfg"></h4>
     <h3>Debt Repayment <i class="fa fa-minus-circle"></i><i class="fa fa-usd"></i></h3>
     <a href="javascript:void(0);" onclick="drawChart2();">Show Debt Repayment Chart<i class="fa fa-caret-down"></i></a><br>
     <a href="javascript:void(0);" onclick="drawChart2();"><i class="fa fa-refresh"></i>Refresh Chart</a>
@@ -221,6 +222,15 @@ input.addEventListener("keyup", function(event) {
         var data5 = parseInt(beta5);
         var data6 = parseInt(beta6);
         //Put chart data together
+        var grade;
+        if(data6 < 0){
+          grade = "D";
+        }else if(data6 >= 0 && data < 10000){
+          grade = "B";
+        }else{
+          grade = "A";
+        }
+        document.getElementById("cfg").innerHTML = "Grade: " + grade;
         var data = google.visualization.arrayToDataTable([
         ['Year', 'Value', { role: 'style' }],
         ['2013', data1, '#6B5B95'],
