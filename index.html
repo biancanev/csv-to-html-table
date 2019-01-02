@@ -248,8 +248,8 @@ input.addEventListener("keyup", function(event) {
       function drawChart2(){
         console.log("Beginning of Find4");
   var rows = document.getElementById("table-container-table").rows.length;
-  var x = 1;
-  while(x < rows || document.getElementyId("table-container-table")){
+  var x = 0;
+  while(x < rows){
     var row_name = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
     if(row_name == "Debt repayment"){
       var data1 = document.getElementById("table-container-table").rows[x].cells[1].innerHTML;
