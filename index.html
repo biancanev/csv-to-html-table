@@ -254,7 +254,7 @@ input.addEventListener("keyup", function(event) {
         }else{
           grade = "A";
         }
-        document.getElementById("cfg").innerHTML += grade;
+        document.getElementById("cfg").innerHTML = "Grade: " + grade;
         document.getElementById("cfgt").innerHTML += grade;
         var data = google.visualization.arrayToDataTable([
         ['Year', 'Value', { role: 'style' }],
