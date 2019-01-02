@@ -10,6 +10,18 @@
     <meta name="author" content="Ryan Kwong and Derek Eder">
     <meta content="Display any CSV file as a searchable, filterable, pretty HTML table" />
     <style>
+      table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}
       header{
        width: 100%;
        position:fixed; 
