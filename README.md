@@ -1,3 +1,7 @@
+# StockWatch
+
+Stockwatch is a free stock analysis webpage. It uses @derekeder's CSV to HTML table script as well as Morning Star data.
+
 # CSV to HTML Table
 
 Display any CSV file as a searchable, filterable, pretty HTML table. Done in 100% JavaScript.
