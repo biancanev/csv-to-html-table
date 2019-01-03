@@ -247,9 +247,15 @@ input.addEventListener("keyup", function(event) {
         var data6 = parseInt(beta6);
         //Put chart data together
         var grade;
-        if(data6 < 0){
+        var i;
+        var total = 0;
+        for(i = 0; i < 5; i++){
+          total += parseInt(document.getElementById("table-container-table").rows[numRows-1].cells[i].innerHTML);
+        }
+        total = total/6
+        if(total < 0){
           grade = "D";
-        }else if(data6 >= 0 && data < 10000){
+        }else if(total >= 0 && total < 100){
           grade = "B";
         }else{
           grade = "A";
