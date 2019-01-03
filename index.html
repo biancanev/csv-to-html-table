@@ -255,7 +255,7 @@ input.addEventListener("keyup", function(event) {
           grade = "A";
         }
         document.getElementById("cfg").innerHTML = "Grade: " + grade;
-        document.getElementById("cfgt").innerHTML += grade;
+        document.getElementById("cfgt").innerHTML = grade;
         var data = google.visualization.arrayToDataTable([
         ['Year', 'Value', { role: 'style' }],
         ['2013', data1, '#6B5B95'],
